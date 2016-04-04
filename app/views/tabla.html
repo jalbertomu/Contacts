@@ -1,0 +1,18 @@
+<div>
+  <table id="alumnado" class="table table-bordered">
+      <tr>
+          <th> Nombre </th>
+          <th> Primer Apellido </th>
+          <th> Segundo Apellido </th>
+          <th> Curso </th>
+          <th> Fecha Matrícula</th>
+      </tr>
+      <tr ng-repeat="employee in employees"  ng-class="{'selected':$index == selectedRow, '':selectedRow == null}" ng-click="setClickedRow($index)">
+          <td> {{employee.name}} </td>
+          <td> {{employee.primerApellido}}</td>
+          <td> {{employee.segundoApellido}}</td>
+          <td> {{employee.curso}}</td>
+          <td> {{employee.fechaMatricula}}</td>
+      </tr>
+  </table>
+</div>

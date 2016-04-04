@@ -1,0 +1,14 @@
+<div class="table-responsive" ng-controller='tablaController'>
+    <display-table></display-table>
+    <form name="alumnoForm">
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="Nombre" ng-model="employeeData.name" required>
+            <input class="form-control" type="text" placeholder="Primer apellido" ng-model="employeeData.primerApellido" required>
+            <input class="form-control" type="text" placeholder="Segundo Apellido" ng-model="employeeData.segundoApellido" required>
+            <input class="form-control" type="text" placeholder="Curso" ng-model="employeeData.curso" required>
+            <button class="btn btn-success" type="submit" ng-click="saveAlumno()">Añadir</button>
+            <button class="btn btn-danger" type="submit" ng-click="removeRow()">Eliminar</button>
+            <button class="btn btn-warning" type="submit" ng-click="updateRow()">Modificar</button>
+        </div>
+    </form>
+</div>
