@@ -1,33 +1,7 @@
-app.factory('myService', function() {
-  var savedData = [];
-  function set(data) {
-    savedData = data;
-  }
-  function get() {
-    return savedData;
-  }
-  return {
-    set: set,
-    get: get
-  }
+app.factory('provincia', function($http) {
+  return $http.get('http://localhost:8080/provincia');
 });
-
-app.factory('getEmployeeService', function($http, $q){
-  return {
-    getAll: getAll
-  }
-  function getAll () {
-    var defered = $q.defer();
-    var promise = defered.promise;
-
-    $http.get("http://localhost:8080/employee")
-      .success(function(data) {
-        defered.resolve(data);
-      })
-      .error(function(err) {
-        defered.reject(err)
-      });
-
-    return promise;
-  }
+app.factory('ciudad', function($resource){
+    return $resource('http://localhost:8080/provincia/:id', {id:'@id'},{
+    get:    {method: 'GET', isArray: true}})
 });

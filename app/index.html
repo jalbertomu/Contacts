@@ -9,21 +9,26 @@
   <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.0.6-master-ba130f2/angular-material.css">
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc4/angular-material.css">
+  <link rel="stylesheet" href="https://material.angularjs.org/1.1.0-rc4/docs.css">
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-material/angular-material.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.0.8/angular-material.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="scripts/controllers/main.js"></script>
   <script src="scripts/factory/factory.js"></script>
-  <script src="scripts/directives/directives.js"></script>
+  <script src="scripts/factory/usuario.js"></script>
+  <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc4-master-59112e4/angular-material.js"></script>
 </head>
 <body ng-app="myapp" ng-controller="main">
-<div class="container">
-<div class="header" ng-show="show">
+<div class="header" ng-show="currentPath != '/'">
   <div class="navbar navbar-default" role="navigation">
       <div class="navbar-header">
         <a class="navbar-brand" href="#/">LogoMarca</a>
@@ -31,16 +36,15 @@
       <div class="collapse navbar-collapse" id="js-navbar-collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#/">Home</a></li>
-          <li><a href="#/login" ng-click="navigation()">Login</a></li>
-          <li><a href="#/employee">Empleados</a></li>
+          <li><a href="#/login">Login</a></li>
+          <li><a href="#/register">Regístrate</a></li>
         </ul>
       </div>
     </div>
   </div>
-</div>
 
 <div class="container">
-  <a-auto></a-auto>
+  <!--<a-auto></a-auto>-->
   <div ng-view></div>
 </div>
 
