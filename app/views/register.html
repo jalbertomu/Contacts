@@ -1,0 +1,64 @@
+
+<div class="container text-center">
+  <a href="/" ng-click="navigation()">Logo</a>
+  <div id="div-login1" class="row">
+    <div id="div-login" class="col-sm-6 col-md-6 col-md-offset-3">
+      <h1 class="text-center login-title">Créate una cuenta</h1>
+      <div class="account-wall">
+        <form class="form-signin" ng-controller="DemoCtrl" >
+          <div layout-gt-sm="row">
+           <md-input-container class="md-block" flex-gt-sm="">
+                <label>Nombre de usuario</label>
+                <input ng-model="usuarioRegister.nombre">
+           </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm="">
+            <label>Email</label>
+            <input ng-model="usuarioRegister.email">
+          </md-input-container>
+          </div>
+          <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm="">
+            <label>Contraseña</label>
+            <input ng-model="usuarioRegister.contrasena" type="password">
+          </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm="">
+            <label>Repetición de la contraseña</label>
+            <input ng-model="usuarioRegister.repite" type="password">
+          </md-input-container>
+          </div>
+          <div layout-gt-sm="row">
+
+          <md-input-container class="md-block" flex-gt-sm="">
+          <label>Provincia</label>
+          <md-select ng-model="usuarioRegister.provincia" ng-change="updateProvincia()">
+          <md-option ng-repeat="provincia in provincias" ng-value="provincia">
+          {{provincia.nombreProvincia}}
+          </md-option>
+          </md-select>
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm="">
+          <label>Ciudad</label>
+          <md-select ng-model="usuarioRegister.ciudad" ng-change="updateCiudad()">
+          <md-option ng-repeat="ciudad in ciudades" ng-value="ciudad"">
+          {{ciudad.nombreCiudad}}
+          </md-option>
+          </md-select>
+          </md-input-container>
+
+          </div>
+          </md-content>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="create()">Entra</button>
+            <div class="dropdown-menu dropdown-menu-right checkbox" role="menu">
+              <label>
+                <input type="checkbox"> Recuérdame
+              </label>
+            </div>
+          <a class="pull-right need-help" href="">¿Necesitas Ayuda?</a>
+          <span class="clearfix"></span>
+        </form>
+      </div>
+      <a href="#/login" class="text-center new-account">¿Ya tienes una cuenta?</a>
+    </div>
+  </div>
+</div>
