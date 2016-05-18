@@ -68,7 +68,7 @@ function getRegisterForm($scope){
     nombre : $scope.usuarioRegister.nombre,
     email: $scope.usuarioRegister.email,
     contrasena : $scope.usuarioRegister.contrasena,
-    ciudad : ciudad
+    ciudadId : ciudad
   }
   return usuario;
 }
