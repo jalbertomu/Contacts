@@ -1,11 +1,4 @@
-app.directive('displayTable', function(){
-  return{
-    restrict: 'E',
-    templateUrl: 'views/tabla.html',
-    replace: true
-  }
-});
-app.directive('aAuto', function(){
+app.directive('buger', function(){
   return{
     restrict: 'E',
     templateUrl: "views/autocomplete.html",

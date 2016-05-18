@@ -1,27 +1,17 @@
-<div ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak="" ng-show="show"  class="autocompletedemoCustomTemplate">
-  <md-content layout-padding="" layout="column">
+
+<div ng-app="" class="autocompletedemoBasicUsage" ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak="">
+  <md-content class="md-padding">
     <form ng-submit="$event.preventDefault()">
-      <md-autocomplete ng-disabled="ctrl.isDisabled"
-                       md-no-cache="ctrl.noCache"
-                       md-selected-item="ctrl.selectedItem"
-                       md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
-                       md-search-text="ctrl.searchText"
-                       md-selected-item-change="ctrl.selectedItemChange(item)"
-                       md-items="item in ctrl.querySearch(ctrl.searchText)"
-                       md-item-text="item.name" md-min-length="0"
-                       placeholder="Buscar"
-                       md-menu-class="autocomplete-custom-template">
+      <md-autocomplete ng-disabled="ctrl.isDisabled" md-no-cache="ctrl.noCache" md-selected-item="ctrl.selectedItem" md-search-text-change="ctrl.searchTextChange(ctrl.searchText)" md-search-text="ctrl.searchText" md-selected-item-change="ctrl.selectedItemChange(item)" md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item.display" md-min-length="0" placeholder="Buscar">
         <md-item-template>
-          <span class="item-title">
-            <md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon>
-            <span> {{item.name}} {{item.id}} {{item.segundoApellido}}</span>
-          </span>
-          <span class="item-metadata">
-            <span class="item-metastat">{{item.curso}}</span>
-            <span class="item-metastat">{{item.fechaMatricula}}</span>
-          </span>
+          <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
         </md-item-template>
+        <md-not-found>
+          No states matching "{{ctrl.searchText}}" were found.
+          <a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a>
+        </md-not-found>
       </md-autocomplete>
+      <br>
     </form>
   </md-content>
 </div>
